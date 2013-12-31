@@ -42,6 +42,24 @@
 			<span>{{email}}</span>
 			<p>{{bio}}</p>
 			<span>Created {{creationDate}}</span>
+			{{outlet}}
+		</div>
+
+	</script>
+
+	<script type="text/x-handlebars" id="user/edit">
+		<div class="user-edit">
+			<label>Choose user avatar</label>
+			{{input value=avatarUrl}}
+
+			<label>User Name</label>
+			{{input value=name}}
+
+			<label>User Email</label>
+			{{input value=email}}
+
+			<label>User Short Bio</label>
+			{{textarea value=bio}}
 		</div>
 	</script>
 
@@ -71,6 +89,7 @@
 
 	<script src="js/core/controllers/usersController.js"></script>
 	<script src="js/core/routes/indexRoute.js"></script>
+	<script src="js/core/routes/userEditRoute.js"></script>
 
 
 </body>
