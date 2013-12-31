@@ -37,6 +37,7 @@
 
 	<script type="text/x-handlebars" id="user">
 		<div class="user-profile">
+			<button {{action "edit"}}>Edit</button>
 			<img {{bind-attr src="avatarUrl"}} alt="User's avatar"/>
 			<h2>{{name}}</h2>
 			<span>{{email}}</span>
@@ -60,6 +61,7 @@
 
 			<label>User Short Bio</label>
 			{{textarea value=bio}}
+			<button {{action "save"}}> ok </button>
 		</div>
 	</script>
 
@@ -88,8 +90,10 @@
 	<script src="js/core/routes/usersRoute.js"></script>
 
 	<script src="js/core/controllers/usersController.js"></script>
+	<script src="js/core/controllers/userController.js"></script>
 	<script src="js/core/routes/indexRoute.js"></script>
 	<script src="js/core/routes/userEditRoute.js"></script>
+	<script src="js/core/controllers/userEditController.js"></script>
 
 
 </body>
