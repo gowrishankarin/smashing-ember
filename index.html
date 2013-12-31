@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>M2M@Prodapt-PRONET:Smart Meter Information System</title>
+	<meta charset="utf-8"/>
+	
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+	<script type="text/x-handlebars">
+		<div class="main">
+			<h1>Bilboa Baggins</h1>
+			{{outlet}}
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="users">
+		<ul class="users-listing">
+			{{#each user in controller}}
+				<li>
+					{{#link-to "user" user}}
+					{{user.name}}
+					{{/link-to}}
+				</li>
+			{{else}}
+				<li>no users... :-(</li>
+			{{/each}}
+			{{outlet}}
+		</ul>
+		<div>Users: {{usersCount}}</div>
+	</script>
+
+	<script type="text/x-handlebars" id="user">
+		<div class="user-profile">
+			<img {{bind-attr src="avatarUrl"}} alt="User's avatar"/>
+			<h2>{{name}}</h2>
+			<span>{{email}}</span>
+			<p>{{bio}}</p>
+			<span>Created {{creationDate}}</span>
+		</div>
+	</script>
+
+
+
+	<script type="text/x-handlebars" id="templatename">
+	<div>
+		I am a template
+	</div>
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+	<script src="js/libs/handlebars-v1.1.2.js"></script>
+	<script src="js/libs/ember-1.2.0.js"></script>
+	<script src="js/libs/ember-data.js"></script>
+
+	<script src="js/core/application.js"></script>
+	<script src="js/core/router.js"></script>
+
+	<script src="js/core/store.js"></script>
+	<script src="js/core/models/user.js"></script>
+	<script src="js/core/routes/usersRoute.js"></script>
+
+	<script src="js/core/controllers/usersController.js"></script>
+	<script src="js/core/routes/indexRoute.js"></script>
+
+
+</body>
+</html>
