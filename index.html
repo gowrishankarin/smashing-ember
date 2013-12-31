@@ -30,15 +30,19 @@
 			{{else}}
 				<li>no users... :-(</li>
 			{{/each}}
-			{{outlet}}
+			
 		</ul>
+		{{#link-to "users.create" class="create-btn"}} Add user {{/link-to}}
+		
 		<div>Users: {{usersCount}}</div>
+		{{outlet}}
 	</script>
 
 	<script type="text/x-handlebars" id="user">
+		<button {{action "edit"}}>Edit</button>
+		<button {{action "delete"}}>Delete</button>
 		<div class="user-profile">
-			<button {{action "edit"}}>Edit</button>
-			<button {{action "delete"}}>Delete</button>
+			
 			<img {{bind-attr src="avatarUrl"}} alt="User's avatar"/>
 			<h2>{{name}}</h2>
 			<span>{{email}}</span>
@@ -104,6 +108,8 @@
 	<script src="js/core/routes/indexRoute.js"></script>
 	<script src="js/core/routes/userEditRoute.js"></script>
 	<script src="js/core/controllers/userEditController.js"></script>
+	<script src="js/core/routes/usersCreateRoute.js"></script>
+	<script src="js/core/controllers/usersCreateController.js"></script>
 
 
 </body>
