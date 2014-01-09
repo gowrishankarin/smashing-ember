@@ -47,7 +47,7 @@
 			<h2>{{name}}</h2>
 			<span>{{email}}</span>
 			<p>{{bio}}</p>
-			<span>Created {{creationDate}}</span>
+			<span>Created {{formatDate creationDate}}</span>
 
 			{{#if deleteMode}}
 			<div class="confirm-box">
@@ -91,10 +91,14 @@
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	<script src="http://code.highcharts.com/highcharts.js"></script>
 	<script src="http://code.highcharts.com/modules/exporting.js"></script>
-
+	<script src="js/libs/moment.min.js"></script>
+	
 	<script src="js/libs/handlebars-v1.1.2.js"></script>
 	<script src="js/libs/ember-1.2.0.js"></script>
 	<script src="js/libs/ember-data.js"></script>
+	<script src="js/libs/localstorage_adapter.js"></script>
+
+	<script src="js/core/helpers/helpers.js"></script>
 
 	<script src="js/core/application.js"></script>
 	<script src="js/core/router.js"></script>
